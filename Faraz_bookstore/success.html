@@ -1,0 +1,43 @@
+<!-- success.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Payment Successful</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+ <nav>
+  <div class="logo">Faraz Book Store</div>
+  <input type="checkbox" id="menu-toggle">
+  <label class="hamburger" for="menu-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </label>
+  <ul class="menu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+  </ul>
+</nav>
+
+
+  <!-- Success Message -->
+  <main class="success-container">
+    <h1>Payment Successful!</h1>
+    <p>Thank you for your purchase.</p>
+    <p>Your card ending in <strong id="card-last4">1234</strong> was charged.</p>
+  </main>
+
+  <!-- Script to extract last 4 digits from URL parameter -->
+  <script>
+    // Get the 'last4' parameter from URL and display it
+    var params = new URLSearchParams(window.location.search);
+    var last4 = params.get('last4') || '****';
+    document.getElementById('card-last4').textContent = last4;
+  </script>
+</body>
+</html>
